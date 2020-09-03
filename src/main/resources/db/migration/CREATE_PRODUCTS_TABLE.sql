@@ -1,0 +1,5 @@
+CREATE TABLE products (
+    pid INTEGER PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    storeId VARCHAR NOT NULL
+);
