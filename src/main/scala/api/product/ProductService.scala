@@ -4,7 +4,7 @@ import scala.concurrent.{ExecutionContext, Future}
 
 class ProductService(productDao: ProductDao)(implicit val ec: ExecutionContext) {
   def add(product: Product) = {
-    productDao.create(product.pid, product.name, product.storeId)
+    productDao.create(product)
   }
 
   def find(pid: Int): Future[Either[String, Product]] = {

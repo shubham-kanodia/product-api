@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productapi-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productapi
+  template:
+    metadata:
+      name: product-api
+      labels:
+        app: productapi
+    spec:
+      containers:
+      - name: product-container
+        image: shubhamkanodia/productapi
+        ports:
+        - containerPort: 8080

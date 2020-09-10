@@ -25,8 +25,8 @@ class ProductDao(implicit val ex: ExecutionContext) {
 
   private val products = TableQuery[ProductTable]
 
-  def create(productId: Int, productName: String, productStoreId: String) = db.run {
-    products returning products += Product(productId, productName, productStoreId)
+  def create(product: Product) = db.run {
+    products returning products += product
   }
 
   def find(productId: Int): Future[Option[Product]] = {

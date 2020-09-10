@@ -1,3 +1,9 @@
+enablePlugins(JavaAppPackaging)
+
+packageName in Docker := "productapi"
+dockerRepository in ThisBuild := Some("docker.io")
+dockerAlias := DockerAlias(None, Some("shubhamkanodia"), (packageName in Docker).value, Some("latest"))
+
 lazy val products = (project in file("."))
   .settings(
     name := "products",
